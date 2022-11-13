@@ -1,128 +1,49 @@
 import React, {Component} from "react";
-
-import {Link} from "react-router-dom";
-import {history} from "../../helpers/history";
-import {clearMessage} from "../../actions/message";
-import EventBus from "../../common/EventBus";
-import {logout} from "../../actions/auth";
+import {Link, Navigate} from "react-router-dom";
+import {connect} from "react-redux";
 
 class Navbar extends Component {
-    constructor(props) {
-        super(props);
-        this.logOut = this.logOut.bind(this);
-
-        this.state = {
-            showModeratorBoard: false,
-            showAdminBoard: false,
-            currentUser: undefined,
-            loggedIn: false,
-        };
-
-        history.listen((location) => {
-            props.dispatch(clearMessage());
-        });
-    }
-
-    componentDidMount() {
-        const user = this.props.user;
-
-        if (user) {
-            this.setState({
-                currentUser: user,
-                showModeratorBoard: user.roles.includes("ROLE_MODERATOR"),
-                showAdminBoard: user.roles.includes("ROLE_ADMIN"),
-            });
-        }
-
-        EventBus.on("logout", () => {
-            this.logOut();
-        });
-    }
-
-    componentWillUnmount() {
-        EventBus.remove("logout");
-    }
-
-    logOut() {
-        this.props.dispatch(logout());
-        this.setState({
-            showModeratorBoard: false,
-            showAdminBoard: false,
-            currentUser: undefined,
-        });
-    }
 
     render() {
-        const {currentUser, showModeratorBoard, showAdminBoard} = this.state;
+        const {user: currentUser} = this.props;
+
+
+        const logout = () => {
+            this.props.dispatch(logout());
+            this.setState({
+                showModeratorBoard: false,
+                showAdminBoard: false,
+                currentUser: undefined,
+            });
+            return <Navigate to="/signup"/>
+        }
 
         return (
-            <nav className="navbar navbar-expand navbar-dark bg-dark">
-                <Link to={"/landing"} className="navbar-brand">
-                     &A
-                </Link>
-                <div className="navbar-nav mr-auto">
-                    <li className="nav-item">
-                        <Link to={"/home"} className="nav-link">
-                            Home
-                        </Link>
-                    </li>
-
-                    {showModeratorBoard && (
-                        <li className="nav-item">
-                            <Link to={"/mod"} className="nav-link">
-                                Moderator Board
-                            </Link>
-                        </li>
-                    )}
-
-                    {showAdminBoard && (
-                        <li className="nav-item">
-                            <Link to={"/admin"} className="nav-link">
-                                Admin Board
-                            </Link>
-                        </li>
-                    )}
-
-                    {currentUser && (
-                        <li className="nav-item">
-                            <Link to={"/user"} className="nav-link">
-                                User
-                            </Link>
-                        </li>
-                    )}
-                </div>
-
-                {currentUser ? (
-                    <div className="navbar-nav ml-auto">
-                        <li className="nav-item">
-                            <Link to={"/profile"} className="nav-link">
-                                {currentUser.username}
-                            </Link>
-                        </li>
-                        <li className="nav-item">
-                            <a href="/login" className="nav-link" onClick={this.logOut}>
-                                LogOut
-                            </a>
-                        </li>
-                    </div>
-                ) : (
-                    <div className="navbar-nav ml-auto">
-                        <li className="nav-item">
-                            <Link to={"/login"} className="nav-link">
-                                 Login
-                            </Link>
-                        </li>
-
-                        <li className="nav-item">
-                            <Link to={"/register"} className="nav-link">
-                                Sign Up
-                            </Link>
-                        </li>
-                    </div>
-                )}
-            </nav>
-        )
+            <div>
+                {
+                    currentUser ?
+                        <ul>
+                            <li className="nav-item"><Link to='/'>&Crypto</Link></li>
+                            <li className="nav-item"><Link to='/landing'>Land</Link></li>
+                            <li className="nav-item"><Link to='/profile'>Profile</Link></li>
+                            <li className="nav-item"><Link onClick={logout} to='/register'>LogOut</Link></li>
+                        </ul>
+                        :
+                        <ul>
+                            <li className="nav-item"><Link to='/register'>Register</Link></li>
+                            <li className="nav-item"><Link to={"/login"} className="nav-link">Login</Link></li>
+                        </ul>
+                }
+            </div>);
     }
+
 }
 
-export default Navbar;
+function mapStateToProps(state) {
+    const {user} = state.auth;
+    return {
+        user,
+    };
+}
+
+export default connect(mapStateToProps)(Navbar);
