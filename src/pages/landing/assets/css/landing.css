@@ -1,0 +1,342 @@
+.home {
+    font-family: 'Helvetica Neue', serif;
+    background: #0B0B0B;
+    line-height: 21px;
+    padding-top: 14px;
+}
+
+.logo {
+    margin-top: 60px;
+    font-style: normal;
+    font-weight: 200;
+    font-size: 20px;
+
+    color: #FFFFFF;
+}
+
+.logo span {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    margin-right: 3px;
+    background: linear-gradient(90deg, #2C9AFF 0%, #FFF500 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
+}
+
+.center {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.map {
+    position: absolute;
+    margin-top: 49vh;
+    right: 5px;
+    transform: rotate(90deg);
+    font-weight: 400;
+    font-size: 16px;
+
+    color: #363636;
+}
+
+.main-section {
+    min-height: 100vh;
+}
+
+.main-picture {
+    margin-top: 22vh;
+}
+
+.title {
+    width: 300px;
+    position: absolute;
+    margin-top: 48vh;
+    text-align: center;
+}
+
+.title h3 {
+    font-weight: 700;
+    font-size: 46px;
+    background: linear-gradient(90deg, #2C9AFF 0%, #FFE600 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
+}
+
+.title h4 {
+    font-weight: 700;
+    font-size: 32px;
+    color: #FFFFFF;
+
+}
+
+/* animation */
+.animation::before {
+    transform: scaleX(0);
+    transform-origin: bottom right;
+}
+
+.animation:hover::before {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.animation::before {
+    content: " ";
+    display: block;
+    position: absolute;
+
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: hsl(200 100% 80%);
+    z-index: -1;
+    transition: transform .3s ease;
+}
+
+/* mission */
+.mission-section {
+    padding-top: 10px;
+    min-height: 100vh;
+    margin-bottom: 100px;
+}
+
+/* build section */
+.build-section {
+    min-height: 30vh;
+    padding-top: 40px;
+    width: 100%;
+    text-align: center;
+}
+
+.build-section img {
+    position: relative;
+    z-index: 100;
+}
+
+.build-section h1 {
+    pointer-events: auto;
+    text-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    font-style: normal;
+    font-weight: 700;
+    font-size: 22px;
+
+    color: #363636;
+
+    margin-bottom: 50px;
+}
+
+.bg-text {
+    position: relative;
+}
+
+.bg-text:before {
+    margin: 3rem;
+    content: "Spring React.js";
+    position: absolute;
+    font-weight: 700;
+    font-size: 100px;
+
+    color: #111111;
+    top: -40px;
+    left: 460px;
+    z-index: 0;
+}
+
+.about-section {
+    min-height: 100vh;
+    text-align: center;
+    color: #FFFFFF;
+
+    margin: auto;
+    width: 40%;
+}
+
+.about-section span {
+    background: linear-gradient(90.16deg, #2C9AFF 1.66%, #FFF500 61.44%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
+}
+
+.about-section h1 {
+    pointer-events: auto;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 22px;
+    color: #363636;
+    margin-bottom: 100px;
+
+}
+
+.about-section h5 {
+    position: absolute;
+    right: 5px;
+    transform: rotate(90deg);
+    font-weight: 400;
+    font-size: 16px;
+    margin-top: 48vh;
+
+    color: #363636;
+}
+
+.about-section h2 {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 44px;
+    text-align: center;
+
+    margin-bottom: 20px;
+}
+
+.about-section p {
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 29px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.about-spline {
+    position: relative;
+    margin: 0 auto;
+
+    width: 1200px;
+    height: 900px;
+}
+
+
+.glow-on-hover {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    width: 220px;
+    height: 50px;
+    outline: none;
+    color: #ffffff;
+    background: #0B0B0B;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5,
+    #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.glow-on-hover:active {
+    color: #0B0B0B
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #0B0B0B;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% {
+        background-position: 0 0;
+    }
+    50% {
+        background-position: 400% 0;
+    }
+    100% {
+        background-position: 0 0;
+    }
+}
+
+/* End section */
+.end-section {
+    min-height: 55vh;
+}
+.end-card {
+    width: 350px;
+    height: 84px;
+    margin-bottom: 120px;
+}
+
+.end-card h4 {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 42px;
+
+    background: linear-gradient(90deg, #FFE600 4.91%, #2C9AFF 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
+}
+
+.end-card p {
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 31px;
+
+    color: #FFFFFF;
+}
+
+.end-section h3 {
+    font-weight: 700;
+    font-size: 34px;
+    line-height: 44px;
+
+    color: #FFFFFF;
+
+    position: absolute;
+    top: 25%;
+    transform: translate(0, -50%);
+    padding: 10px;
+}
+
+.end-section a {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    padding: 10px;
+}
+
+.bg-line::before {
+    /* we want to draw a line, so no content needed */
+    content: '';
+
+    /* this sets the position and size of the pseudo-element */
+    position: absolute;
+    top: 160px;
+    width: 250px;
+    height: 1px;
+    background-color: #86868A;;
+
+    /* draw behind child elements */
+    z-index: -1;
+}
