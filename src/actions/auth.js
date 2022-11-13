@@ -3,7 +3,6 @@ import {
     REGISTER_FAIL,
     LOGIN_SUCCESS,
     LOGIN_FAIL,
-    LOGOUT,
     SET_MESSAGE,
     REFRESH_TOKEN
 } from "./types";
@@ -76,14 +75,6 @@ export const login = (username, password) => (dispatch) => {
             return Promise.reject();
         }
     );
-};
-
-export const logout = () => (dispatch) => {
-    AuthService.logout();
-
-    dispatch({
-        type: LOGOUT,
-    });
 };
 
 export const refreshToken = (accessToken) => (dispatch) => {
