@@ -1,12 +1,11 @@
-import React, {Component} from "react";
-import {connect} from "react-redux";
-import {Router, Routes, Route, Link, BrowserRouter} from "react-router-dom";
+import React from "react";
+import {Route, Routes} from "react-router-dom";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
-import Login from "./components/login.component";
-import Register from "./components/register.component";
+import Login from "./pages/login/login.component";
+import Register from "./pages/login/register.component";
 import Home from "./components/home.component";
 import Profile from "./components/profile.component";
 

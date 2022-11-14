@@ -1,0 +1,208 @@
+.card-title h3 {
+    margin-top: 10px;
+    font-size: 30px;
+    line-height: 1.2;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.card-title {
+    margin-bottom: 33px;
+}
+
+.boxed {
+    text-align: center;
+    width: 65px;
+    font-size: 35px;
+    font-weight: 400;
+    color: white;
+    padding: 7px 8px;
+    background-color: black;
+    border: 1px solid #333333;
+    border-radius: 5px;
+    margin: 0 auto 15px;
+}
+
+.login-section {
+    width: 400px;
+    height: 580px;
+
+    background: #FFFFFF;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.25);
+    border-radius: 7px;
+    border-color: white;
+}
+
+.login-section button {
+    margin-top: 5px;
+    margin-left: 10px;
+}
+
+.btn-hover.color {
+    background-image: linear-gradient(90deg, #666df9 0%, #36c3f6 100%);
+}
+
+.btn-hover {
+    height: 55px;
+    width: 250px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    margin: 20px;
+    border: none;
+    background-size: 200% 100%;
+    border-radius: 10px;
+
+    moz-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+}
+
+.btn-hover:hover {
+    background-position: 100% 0;
+    moz-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+}
+
+.alert {
+    margin-top: 3px;
+    font-size: 14px;
+    background-color: #fff;
+}
+
+.alert h3 {
+    font-size: 14px;
+}
+
+.link-signup {
+    display: table;
+    margin: 25px auto;
+    text-decoration: none;
+    color: #b6b5b5;
+    transition: .4s;
+}
+
+.link-signup {
+    text-decoration: none;
+    color: #494949;
+}
+
+.group {
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.auth-input {
+    font-size: 16px;
+    padding: 10px 10px 10px 5px;
+    display: block;
+    width: 265px;
+    border: none;
+    border-bottom: 1px solid #9f9f9f;
+}
+
+.auth-input:focus {
+    outline: none;
+}
+
+label {
+    color: #999;
+    font-size: 16px;
+    position: absolute;
+    pointer-events: none;
+    left: 5px;
+    top: 5px;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+}
+
+/* active state */
+.auth-input:focus ~ label, .auth-input:valid ~ label {
+    top: -23px;
+    font-size: 14px;
+    color: #3593ff;
+}
+
+/* BOTTOM BARS ================================= */
+.bar {
+    position: relative;
+    display: block;
+    width: 265px;
+}
+
+.bar:before, .bar:after {
+    content: '';
+    height: 2px;
+    width: 0;
+    bottom: 1px;
+    position: absolute;
+    background: #3593ff;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+}
+
+.bar:before {
+    left: 50%;
+}
+
+.bar:after {
+    right: 50%;
+}
+
+.auth-input:focus ~ .bar:before, .auth-input:focus ~ .bar:after {
+    width: 50%;
+}
+
+.highlight {
+    position: absolute;
+    height: 60%;
+    width: 100px;
+    top: 25%;
+    left: 0;
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+/* active state */
+.auth-input:focus ~ .highlight {
+    -webkit-animation: inputHighlighter 0.2s ease;
+    -moz-animation: inputHighlighter 0.2s ease;
+    animation: inputHighlighter 0.2s ease;
+}
+
+/* ANIMATIONS ================ */
+@-webkit-keyframes inputHighlighter {
+    from {
+        background: #3593ff;
+    }
+    to {
+        width: 0;
+        background: transparent;
+    }
+}
+
+@-moz-keyframes inputHighlighter {
+    from {
+        background: #3593ff;
+    }
+    to {
+        width: 0;
+        background: transparent;
+    }
+}
+
+@keyframes inputHighlighter {
+    from {
+        background: #3593ff;
+    }
+    to {
+        width: 0;
+        background: transparent;
+    }
+}

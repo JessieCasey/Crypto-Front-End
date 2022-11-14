@@ -1,11 +1,12 @@
-import React, { Component } from "react";
+import React, {Component} from "react";
 import Form from "react-validation/build/form";
 import Input from "react-validation/build/input";
 import CheckButton from "react-validation/build/button";
-import { isEmail } from "validator";
+import {isEmail} from "validator";
 
-import { connect } from "react-redux";
-import { register } from "../actions/auth";
+import {connect} from "react-redux";
+import {register} from "../../actions/auth";
+import {Link} from "react-router-dom";
 
 const required = (value) => {
     if (!value) {
@@ -109,16 +110,15 @@ class Register extends Component {
     }
 
     render() {
-        const { message } = this.props;
+        const {message} = this.props;
 
         return (
             <div className="col-md-12">
-                <div className="card card-container">
-                    <img
-                        src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
-                        alt="profile-img"
-                        className="profile-img-card"
-                    />
+                <div className="login-section card card-container">
+                    <div className={"card-title"}>
+                        <h3>Welcome</h3>
+                        <h1 className="boxed">A</h1>
+                    </div>
 
                     <Form
                         onSubmit={this.handleRegister}
@@ -128,57 +128,66 @@ class Register extends Component {
                     >
                         {!this.state.successful && (
                             <div>
-                                <div className="form-group">
-                                    <label htmlFor="username">Username</label>
-                                    <Input
+                                <div className="group">
+                                    <input
                                         type="text"
-                                        className="form-control"
+                                        className="auth-input"
                                         name="username"
                                         value={this.state.username}
                                         onChange={this.onChangeUsername}
-                                        validations={[required, vusername]}
+                                        required
                                     />
+                                    <span className="highlight"></span>
+                                    <span className="bar"></span>
+                                    <label htmlFor="username">Username</label>
                                 </div>
 
-                                <div className="form-group">
-                                    <label htmlFor="email">Email</label>
-                                    <Input
+                                <div className="group">
+                                    <input
                                         type="text"
-                                        className="form-control"
+                                        className="auth-input"
                                         name="email"
                                         value={this.state.email}
                                         onChange={this.onChangeEmail}
-                                        validations={[required, email]}
+                                        required
                                     />
+                                    <span className="highlight"></span>
+                                    <span className="bar"></span>
+                                    <label htmlFor="email">Email</label>
                                 </div>
 
-                                <div className="form-group">
-                                    <label htmlFor="password">Password</label>
-                                    <Input
+                                <div className="group">
+                                    <input
                                         type="password"
-                                        className="form-control"
+                                        className="auth-input"
                                         name="password"
                                         value={this.state.password}
                                         onChange={this.onChangePassword}
-                                        validations={[required, vpassword]}
+                                        required
                                     />
+                                    <span className="highlight"></span>
+                                    <span className="bar"></span>
+                                    <label htmlFor="password">Password</label>
                                 </div>
 
                                 <div className="form-group">
-                                    <button className="btn btn-primary btn-block">Sign Up</button>
+                                    <button className={"btn-hover color"}>
+                                        <span>Sign Up</span>
+                                    </button>
                                 </div>
                             </div>
                         )}
 
                         {message && (
                             <div className="form-group">
-                                <div className={ this.state.successful ? "alert alert-success" : "alert alert-danger" } role="alert">
+                                <div className={this.state.successful ? "alert alert-success" : "alert alert-danger"}
+                                     role="alert">
                                     {message}
                                 </div>
                             </div>
                         )}
                         <CheckButton
-                            style={{ display: "none" }}
+                            style={{display: "none"}}
                             ref={(c) => {
                                 this.checkBtn = c;
                             }}
@@ -191,7 +200,7 @@ class Register extends Component {
 }
 
 function mapStateToProps(state) {
-    const { message } = state.message;
+    const {message} = state.message;
     return {
         message,
     };
