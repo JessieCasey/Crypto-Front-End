@@ -6,7 +6,7 @@ import "./App.css";
 
 import Login from "./pages/login/login.component";
 import Register from "./pages/login/register.component";
-import Home from "./components/home.component";
+import Home from "./pages/home/home.component";
 import Profile from "./components/profile.component";
 
 import Navbar from "./components/header/Navbar";

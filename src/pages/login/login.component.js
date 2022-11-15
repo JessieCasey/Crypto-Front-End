@@ -2,20 +2,11 @@ import React, {Component} from "react";
 import {Link, Navigate} from 'react-router-dom';
 
 import Form from "react-validation/build/form";
-import Input from "react-validation/build/input";
 import CheckButton from "react-validation/build/button";
 
 import {connect} from "react-redux";
 import {login} from "../../actions/auth";
 import './assets/css/login.css'
-
-const required = (value) => {
-    if (!value) {
-        return (<div className="alert alert-danger" role="alert">
-            This field is required!
-        </div>);
-    }
-};
 
 class Login extends Component {
     constructor(props) {
@@ -25,7 +16,9 @@ class Login extends Component {
         this.onChangePassword = this.onChangePassword.bind(this);
 
         this.state = {
-            username: "", password: "", loading: false,
+            username: "",
+            password: "",
+            loading: false
         };
     }
 
@@ -130,9 +123,7 @@ class Login extends Component {
                     </div>)}
                     <CheckButton
                         style={{display: "none"}}
-                        ref={(c) => {
-                            this.checkBtn = c;
-                        }}
+                        ref={(c) => {this.checkBtn = c;}}
                     />
                 </Form>
             </div>

@@ -1,0 +1,107 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+.navigation {
+    margin: 20px auto 15px;
+    width: 700px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 25px;
+    background: #FFFFFF;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.nav-links a {
+    font-weight: 400;
+    font-size: 15px;
+    color: #737373;
+    text-decoration: none;
+}
+
+.menu {
+    display: flex;
+    gap: 1em;
+}
+
+.menu li {
+    margin-top: 15px;
+    padding: 0 12px;
+}
+
+/* DROPDOWN MENU */
+.services {
+    position: relative;
+}
+
+.dropdown {
+    background-color: rgb(255, 255, 255);
+    padding: 0 0;
+    position: absolute;
+    display: none;
+    border-radius: 6px;
+    top: 22px;
+    border: 0.5px solid #a9a9a9;
+}
+
+.dropdown li + li {
+    margin-top: 10px;
+}
+
+.dropdown li {
+    width: 6em;
+    text-align: center;
+    padding: 5px 10px 15px;
+}
+
+.services:hover .dropdown {
+    display: block;
+}
+
+.crypto-logo {
+    font-weight: 700;
+    font-size: 28px;
+
+    background: linear-gradient(90deg, #2C9AFF 0%, #FFE600 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
+}
+
+.hover-effect {
+    color: inherit;
+    text-decoration: none;
+}
+
+.hover-effect {
+    background: linear-gradient(
+            rgb(255, 255, 255),
+            rgb(246, 245, 245)
+    ),
+    linear-gradient(
+            to right,
+            rgba(255, 0, 0, 1),
+            rgba(255, 0, 180, 1),
+            rgba(0, 100, 200, 1)
+    );
+    background-size: 100% 1px, 0 1px;
+    background-position: 100% 10%, 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 400ms;
+}
+
+.hover-effect:hover  {
+    background-size: 0 1px, 100% 1px;
+}
