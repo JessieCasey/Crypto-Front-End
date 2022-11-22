@@ -1,32 +1,42 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
-import UserService from "../../services/user.service";
+import './assets/css/home.css'
+import Trending from "./Trending";
+import News from "./News";
+import Trade from "./Trade";
+import CryptosList from "./Cryptos";
 
 const Home = () => {
-    const [content, setContent] = useState("");
-
-    useEffect(() => {
-        UserService.getPublicContent().then(
-            (response) => {
-                setContent(response.data);
-            },
-            (error) => {
-                const _content =
-                    (error.response && error.response.data) ||
-                    error.message ||
-                    error.toString();
-
-                setContent(_content);
-            }
-        );
-    }, []);
-
     return (
-        <div className="container">
-            <header className="jumbotron">
-                <h3>{content}</h3>
-            </header>
+        <div className={"container"}>
+            <div className="header-blocks">
+                <div className="row">
+                    <div className="col-4">
+                        <div className={'block'}>
+                            <h3>🔥 Trending</h3>
+                            <Trending/>
+                        </div>
+                    </div>
+                    <div className="col-4">
+                        <div className={'block'}>
+                            <h3>🚀 Top Market</h3>
+                            <Trade/>
+                        </div>
+                    </div>
+                    <div className="col-4">
+                        <div className={'block'}>
+                            <h3>📰 News</h3>
+                            <News/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className={"cryptos-list"}>
+                <CryptosList />
+            </div>
         </div>
+
+
     );
 };
 

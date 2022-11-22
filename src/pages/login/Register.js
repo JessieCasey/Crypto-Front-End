@@ -1,8 +1,7 @@
-import React, { useState, useRef } from "react";
+import React, {useRef, useState} from "react";
 import Form from "react-validation/build/form";
-import Input from "react-validation/build/input";
 import CheckButton from "react-validation/build/button";
-import { isEmail } from "validator";
+import {isEmail} from "validator";
 
 import AuthService from "../../services/auth.service";
 
@@ -102,54 +101,62 @@ const Register = (props) => {
 
     return (
         <div className="col-md-12">
-            <div className="card card-container">
-                <img
-                    src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
-                    alt="profile-img"
-                    className="profile-img-card"
-                />
+            <div className="login-section card card-container">
+                <div className={"card-title"}>
+                    <h3>Welcome</h3>
+                    <h1 className="boxed">A</h1>
+                </div>
 
                 <Form onSubmit={handleRegister} ref={form}>
                     {!successful && (
                         <div>
-                            <div className="form-group">
-                                <label htmlFor="username">Username</label>
-                                <Input
+                            <div className="group">
+                                <input
                                     type="text"
-                                    className="form-control"
+                                    className="auth-input"
                                     name="username"
                                     value={username}
                                     onChange={onChangeUsername}
-                                    validations={[required, vusername]}
+                                    required
                                 />
+                                <span className="highlight"></span>
+                                <span className="bar"></span>
+                                <label htmlFor="username">Username</label>
                             </div>
 
-                            <div className="form-group">
-                                <label htmlFor="email">Email</label>
-                                <Input
+                            <div className="group">
+                                <input
                                     type="text"
-                                    className="form-control"
-                                    name="email"
+                                    className="auth-input"
+                                    name="username"
                                     value={email}
                                     onChange={onChangeEmail}
-                                    validations={[required, validEmail]}
+                                    required
                                 />
+                                <span className="highlight"></span>
+                                <span className="bar"></span>
+                                <label htmlFor="username">Email</label>
                             </div>
 
-                            <div className="form-group">
-                                <label htmlFor="password">Password</label>
-                                <Input
+                            <div className="group">
+                                <input
                                     type="password"
-                                    className="form-control"
+                                    className="auth-input"
                                     name="password"
                                     value={password}
                                     onChange={onChangePassword}
-                                    validations={[required, vpassword]}
+                                    required
                                 />
+                                <span className="highlight"></span>
+                                <span className="bar"></span>
+                                <label htmlFor="password">Password</label>
                             </div>
 
-                            <div className="form-group">
-                                <button className="btn btn-primary btn-block">Sign Up</button>
+
+                            <div className="group">
+                                <button className={"btn-hover color"}>
+                                    <span>Sign Up</span>
+                                </button>
                             </div>
                         </div>
                     )}
@@ -166,7 +173,7 @@ const Register = (props) => {
                             </div>
                         </div>
                     )}
-                    <CheckButton style={{ display: "none" }} ref={checkBtn} />
+                    <CheckButton style={{display: "none"}} ref={checkBtn}/>
                 </Form>
             </div>
         </div>
