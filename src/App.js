@@ -1,18 +1,14 @@
 import React from "react";
 import {Route, Routes} from "react-router-dom";
-
-import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
-import Login from "./pages/login/login.component";
-import Register from "./pages/login/register.component";
-import Home from "./pages/home/home.component";
-import Profile from "./components/profile.component";
-
+import Login from "./pages/login/Login";
+import Register from "./pages/login/Register";
+import Home from "./pages/home/Home";
+import Profile from "./pages/profile/Profile";
 import Navbar from "./components/header/Navbar";
 
-
-function App() {
+const App = () => {
     return (
         <div>
             <Navbar/>
@@ -26,8 +22,6 @@ function App() {
             </div>
         </div>
     );
-
-}
-
+};
 
 export default App;

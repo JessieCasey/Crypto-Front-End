@@ -1,68 +1,89 @@
-import React, {Component} from "react";
-import {Link, Navigate} from "react-router-dom";
-import {connect} from "react-redux";
+import React, {useEffect, useState} from "react";
+import {Link} from "react-router-dom";
 import './assets/css/navbar.css'
 
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faUser} from '@fortawesome/fontawesome-free-solid'
+import AuthService from "../../services/auth.service";
+import EventBus from "../../common/EventBus";
 
-class Navbar extends Component {
+const Navbar = () => {
+    const [showModeratorBoard, setShowModeratorBoard] = useState(false);
+    const [showAdminBoard, setShowAdminBoard] = useState(false);
+    const [currentUser, setCurrentUser] = useState(undefined);
 
-    render() {
-        const {user: currentUser} = this.props;
+    useEffect(() => {
+        const user = AuthService.getCurrentUser();
 
-        const logout = () => {
-            this.props.dispatch(logout());
-            this.setState({
-                showModeratorBoard: false,
-                showAdminBoard: false,
-                currentUser: undefined,
-            });
-            return <Navigate to="/signup"/>
+        if (user) {
+            setCurrentUser(user);
+            setShowModeratorBoard(user.roles.includes("ROLE_MODERATOR"));
+            setShowAdminBoard(user.roles.includes("ROLE_ADMIN"));
         }
 
-        return (
-            <nav className={'navigation'}>
-                <div><Link to='/landing' className={"crypto-logo"}>&Crypto</Link></div>
+        EventBus.on("logout", () => {
+            logOut();
+        });
 
-                {
-                    currentUser ?
-                        <ul className="nav-links">
-                            <div className="menu">
-                                <li><Link className={'hover-effect'} to='/'>Home</Link></li>
-                                <li className="services">
-                                    <Link to='/profile'>Profile</Link>
-                                    <ul className="dropdown">
-                                        <li className="nav-item"><Link className={'hover-effect'} to='/profile'>Profile</Link></li>
-                                        <li className="nav-item"><Link className={'hover-effect'} to='/settings'>Settings</Link></li>
-                                        <li className="nav-item"><Link onClick={logout} to='/login' style={{color: 'red'}}>LogOut</Link></li>
-                                    </ul>
-                                </li>
-                            </div>
+        return () => {
+            EventBus.remove("logout");
+        };
+    }, []);
 
-                        </ul>
-                        :
-                        <ul className="nav-links">
-                            <div className="menu">
-                                <li><Link className={'hover-effect'} to='/'>Home</Link></li>
-                                <li><Link className={'hover-effect'} to='/register'>Register</Link></li>
-                                <li><Link className={'hover-effect'} to={"/login"}>Login</Link></li>
-                            </div>
-                        </ul>
-                }
-
-                {/*<FontAwesomeIcon icon={faUser} style={{fontSize: '24px'}}/>*/}
-
-            </nav>);
-    }
-
-}
-
-function mapStateToProps(state) {
-    const {user} = state.auth;
-    return {
-        user,
+    const logOut = () => {
+        AuthService.logout();
+        setShowModeratorBoard(false);
+        setShowAdminBoard(false);
+        setCurrentUser(undefined);
     };
+    return (
+        <nav className={'navigation'}>
+            <div><Link to='/' className={"crypto-logo"}>&Crypto</Link></div>
+
+            {currentUser ? (
+                <ul className="nav-links">
+                    <div className="menu">
+                        {/* Under development */}
+                        {/*{showAdminBoard && (*/}
+                        {/*    <li className="nav-item">*/}
+                        {/*        <Link to={"/admin"} className="nav-link">*/}
+                        {/*            Admin Board*/}
+                        {/*        </Link>*/}
+                        {/*    </li>*/}
+                        {/*)}*/}
+                        {/*{showModeratorBoard && (*/}
+                        {/*    <li className="nav-item">*/}
+                        {/*        <Link to={"/mod"} className={'hover-effect'}>*/}
+                        {/*            Moderator Board*/}
+                        {/*        </Link>*/}
+                        {/*    </li>*/}
+                        {/*)}*/}
+                        <li><Link className={'hover-effect'} to='/'>Home</Link></li>
+                        <li className="services" style={{zIndex: '100'}}>
+                            <Link to='/profile'>{currentUser.username}</Link>
+                            <ul className="dropdown">
+                                <li className="nav-item"><Link className={'hover-effect'} to='/profile'>Profile</Link>
+                                </li>
+                                <li className="nav-item"><Link className={'hover-effect'} to='/settings'>Settings</Link>
+                                </li>
+                                <li className="nav-item"><Link onClick={logOut} to='/login'
+                                                               style={{color: 'red'}}>LogOut</Link></li>
+                            </ul>
+                        </li>
+                    </div>
+                </ul>
+            ) : (
+                <ul className="nav-links">
+                    <div className="menu">
+                        <li><Link className={'hover-effect'} to='/'>Home</Link></li>
+                        <li><Link className={'hover-effect'} to='/register'>Register</Link></li>
+                        <li><Link className={'hover-effect'} to={"/login"}>Login</Link></li>
+                    </div>
+                </ul>
+            )}
+        </nav>
+    );
 }
 
-export default connect(mapStateToProps)(Navbar);
+
+export default Navbar;

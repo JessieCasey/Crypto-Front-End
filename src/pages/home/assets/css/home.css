@@ -1,0 +1,50 @@
+.header-blocks {
+    margin-top: 50px;
+    margin-left: -12px;
+}
+
+.block {
+    padding: 20px 28px 15px 23px;
+    width: 360px;
+    height: 190px;
+
+    margin-left: 10px;
+    margin-right: 10px;
+    background: #FFFFFF;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+    border-radius: 7px;
+}
+
+.block h3 {
+    font-weight: 700;
+    font-size: 22px;
+    margin-bottom: 18px;
+}
+.cryptos-list {
+    margin-top: 50px;
+}
+
+.cryptos-header {
+    width: 1400px;
+    height: 38px;
+
+    background: #F5F5F5;
+    border-radius: 6px;
+}
+
+.filters {
+    display: flex;
+    gap: 7em;
+}
+
+.filters li {
+    margin-top: 15px;
+    padding: 0 12px;
+}
+
+.filter-links a {
+    font-weight: 400;
+    font-size: 15px;
+    color: #737373;
+    text-decoration: none;
+}
