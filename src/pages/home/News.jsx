@@ -11,7 +11,9 @@ const News = () => {
         const fetchData = async () => {
             setLoading(true);
             try {
-                const {data: response} = await axios.get('http://localhost:9091/api/news/newest');
+                const {data: response} = await axios.get('http://localhost:9091/api/news/newest', {headers: {
+                        C_KEY: global.config.APIKEY.C_KEY //the token is a variable which holds the token
+                    }});
                 setData(response);
             } catch (error) {
                 console.error(error.message);

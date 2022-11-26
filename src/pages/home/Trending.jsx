@@ -10,7 +10,11 @@ const Trending = () => {
         const fetchData = async () => {
             setLoading(true);
             try {
-                const {data: response} = await axios.get('http://localhost:9091/api/crypto/trending?count=3');
+                const {data: response} = await axios.get('http://localhost:9091/api/crypto/trending?count=3', {
+                    headers: {
+                        C_KEY: global.config.APIKEY.C_KEY //the token is a variable which holds the token
+                    }
+                });
                 setData(response);
             } catch (error) {
                 console.error(error.message);
@@ -27,9 +31,9 @@ const Trending = () => {
             {!loading && (
                 <div>
                     {data.map(item => (
-                        <div key={item.number}  style={{marginBottom: '10px'}}>
+                        <div key={item.number} style={{marginBottom: '10px'}}>
                             <span className="count">{item.number}</span>
-                            <img  className="circle-img" src={item.image} alt="Crypto-image"/>
+                            <img className="circle-img" src={item.image} alt="Crypto-image"/>
                             <span className="coin-title">{item.name}</span>
                             <span className="coin-symbols">{item.symbol}</span>
                             <span className="coin-change">{item.change}%</span>

@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import './assets/css/trending.css'
 import axios from "axios";
+import Requests from "../profile/Requests";
 
 const Trade = () => {
     const [loading, setLoading] = useState(true);
@@ -10,7 +11,9 @@ const Trade = () => {
         const fetchData = async () => {
             setLoading(true);
             try {
-                const {data: response} = await axios.get('http://localhost:9091/api/crypto/top-market?count=3');
+                const {data: response} = await axios.get('http://localhost:9091/api/crypto/top-market?count=3', {headers: {
+                        C_KEY: global.config.APIKEY.C_KEY//the token is a variable which holds the token
+                    }});
                 setData(response);
             } catch (error) {
                 console.error(error.message);

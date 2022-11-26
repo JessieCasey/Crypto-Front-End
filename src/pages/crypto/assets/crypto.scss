@@ -1,0 +1,226 @@
+.crypto-header > div > h4 > img {
+  width: 40px;
+  height: 40px;
+
+  position: relative;
+  top: -3px;
+  background: #F5F5F5;
+  border-radius: 100%;
+  margin-right: 7px;
+}
+
+.crypto-header > div > h4 {
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.crypto-header > div > h4 > span {
+  font-weight: bold;
+  font-size: 14px;
+  padding: 7px 9px;
+  border-radius: 4px;
+  position: relative;
+  margin-left: 8px;
+  top: -5px;
+  color: #5B667C;
+  background-color: #F0F2F5;
+}
+
+.crypto-header > div > span {
+  font-weight: bold;
+  font-size: 14px;
+  padding: 7px 9px;
+  border-radius: 4px;
+  position: relative;
+  top: 20px;
+  color: #5B667C;
+  background-color: #F0F2F5;
+}
+
+.crypto-header > .col-5 {
+  padding-top: 10px;
+}
+
+.crypto-header > .col-7 > h6 {
+  font-weight: bold;
+  font-size: 18px;
+  color: #616B80;
+}
+
+.crypto-price {
+  font-weight: bold;
+  font-size: 34px;
+  color: #000000;
+}
+
+.crypto-price > span {
+  font-weight: bold;
+  font-size: 12px;
+  padding: 9px 10px;
+  border-radius: 4px;
+  position: relative;
+  top: -7px;
+  color: #FFFFFF;
+  background-color: #5CC489;
+  margin-left: 10px;
+}
+
+.crypto-volume {
+  margin-top: 5px;
+  font-weight: normal;
+  font-size: 16px;
+  color: #7a7a7a;
+}
+
+.crypto-volume > span {
+  font-weight: bold;
+  font-size: 16px;
+  color: #000000;
+}
+
+.crypto-header {
+  padding-top: 40px;
+  padding-left: 30px;
+  margin-top: 50px;
+  width: 100%;
+  height: 310px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.crypto-cap > h6 {
+  font-weight: 400;
+  font-size: 16px;
+
+  color: #5B667C;
+}
+
+.crypto-cap > h5 {
+  font-weight: 400;
+  font-size: 16px;
+
+  color: #000000;
+}
+
+.crypto-cap > span {
+  font-weight: bold;
+  font-size: 13px;
+  padding: 8px 8px;
+  border-radius: 4px;
+  position: relative;
+  top: 3px;
+  color: #FFFFFF;
+  background-color: #5CC489;
+
+}
+
+.crypto-volume-mini > h6 {
+  font-weight: 400;
+  font-size: 16px;
+
+  color: #5B667C;
+}
+
+.crypto-volume-mini > h5 {
+  font-weight: 400;
+  font-size: 16px;
+
+  color: #000000;
+}
+
+.crypto-volume-mini > span {
+  font-weight: bold;
+  font-size: 13px;
+  padding: 8px 8px;
+  border-radius: 4px;
+  position: relative;
+  top: 3px;
+  color: #FFFFFF;
+  background-color: #5CC489;
+}
+
+.circulating-supply {
+  margin-top: -13px;
+  margin-left: -10px;
+}
+
+.circulating-supply > h6 {
+  font-weight: 400;
+  font-size: 16px;
+
+  color: #5B667C;
+}
+
+.circulating-supply > h5 {
+  font-weight: 400;
+  font-size: 16px;
+
+  color: #000000;
+}
+
+.circulating-supply > span {
+  font-weight: bold;
+  font-size: 13px;
+  padding: 8px 8px;
+  border-radius: 4px;
+  position: relative;
+  top: 3px;
+  color: #FFFFFF;
+  background-color: #5CC489;
+}
+
+.crypto-graph {
+  margin-top: 45px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+  height: 450px;
+}
+
+.crypto-news {
+  padding: 25px;
+  margin-top: 45px;
+  margin-left: 62px;
+  width: 100%;
+  height: 450px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+
+.details > div > h5 {
+  font-weight: 400;
+  text-align: center;
+  font-size: 16px;
+  color: #868686;
+}
+
+.details > div {
+  margin-bottom: 20px;
+}
+
+.details > div > h5 > span {
+  font-weight: bold;
+  font-size: 12px;
+  padding: 6px 6px;
+  border-radius: 4px;
+  position: relative;
+  top: -2px;
+  margin-left: 10px;
+  color: #5B667C;
+  background-color: #F0F2F5;
+}
+
+.details > div > h5 {
+  margin-bottom: 15px;
+}
+
+.details > div > span {
+  font-weight: bold;
+  font-size: 12px;
+  padding: 6px 6px;
+  border-radius: 4px;
+  position: relative;
+  top: 3px;
+  margin-left: 10px;
+  color: #5B667C;
+  background-color: #F0F2F5;
+}
