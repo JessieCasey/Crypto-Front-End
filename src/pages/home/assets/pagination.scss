@@ -1,18 +1,22 @@
 .pagination {
-  margin: 15px auto;
   display: flex;
   list-style: none;
   outline: none;
 }
 
+.pagination-block {
+  width: 200px;
+  margin: 25px auto 30px;
+
+}
 .pagination > .active > a {
   background-color: #a9a9a9;
   border-color: #a9a9a9;
   color: #fff;
+  border-radius: 5px;
 }
 
 .pagination > li > a {
-  border: 1px solid #a9a9a9;
   padding: 5px 10px;
   outline: none;
   cursor: pointer;
@@ -62,6 +66,7 @@
   padding-top: 20px;
   padding-left: 17px;
   color: #737373;
+  cursor: pointer;
 }
 
 .table > tbody > tr > th > img {
