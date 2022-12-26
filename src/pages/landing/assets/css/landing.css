@@ -51,7 +51,7 @@
 }
 
 .title {
-    width: 300px;
+    width: 450px;
     position: absolute;
     margin-top: 48vh;
     text-align: center;
@@ -68,9 +68,8 @@
 
 .title h4 {
     font-weight: 700;
-    font-size: 32px;
-    color: #FFFFFF;
-
+    font-size: 28px;
+    color: #ffffff;
 }
 
 /* animation */

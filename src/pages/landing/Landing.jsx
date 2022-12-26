@@ -15,7 +15,7 @@ function Home() {
                     <div><h5 className={'map animation'}>Home</h5></div>
                     <div className={'center title'}>
                         <h3>&Crypto API</h3>
-                        <h4 className={'subtitle'}>The best crypto</h4>
+                        <h4 className={'subtitle'}>The best cryptographic provider</h4>
                         <span></span>
                     </div>
                     <img className={'main-picture'} height={'110%'} width={'110%'}
@@ -29,7 +29,7 @@ function Home() {
 
                     <Content>
                         <h1>Welcome to us</h1>
-                        <p><span>&Crypto</span> is the world’s leading blockchain ecosystem,
+                        <p><span>&Crypto</span> is the world’s leading cryptographic provider system,
                             with a product suite that includes the largest digital asset exchange.
                             Our Mission is to be the infrastructure service provider in crypto.
                         </p>
@@ -47,8 +47,8 @@ function Home() {
                 <h1>About us</h1>
                 <h2>Welcome to <span>&Crypto</span></h2>
 
-                <p>&A product. Focus on design and perfomance.
-                    We provide everything you need to become a proffesional trader. Crypto Open API is open for you
+                <p>&A product. Focus on design and performance.
+                    We provide everything you need to become a professional trader. Crypto Open API is open for you
                 </p>
                 <Spline className={'about-spline'}
                         scene="https://prod.spline.design/J6vCxOwHw5p3669n/scene.splinecode"/>
@@ -68,7 +68,7 @@ function Home() {
                         </div>
                     </div>
                     <div className={'col-6'}>
-                        <h3>This is the biggest change to the face of IPhone since we went all screen</h3>
+                        <h3>This is your the biggest change since you viewed this screen</h3>
                         <a href="/">
                             <button className="glow-on-hover" type="button">Try it now</button>
                         </a>
