@@ -11,7 +11,7 @@ To get started you need to have the `Back-end` part installed on your machine.
 To know how to run it you can visit the following 
 [link](https://github.com/JessieCasey/Crypto-Open-API) (https://github.com/JessieCasey/Crypto-Open-API)
 
-Then you can open the `Front-end` in your favorite IDE and type in the terminal the following command `npm install` & `npm start`.
+Then you can open the `Front-end` part in your favorite IDE and type in the terminal the following command `npm install` & `npm start`.
 
 ### Congratulations
 
