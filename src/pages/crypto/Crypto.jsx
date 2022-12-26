@@ -22,7 +22,9 @@ const Crypto = () => {
                         C_KEY: global.config.APIKEY.C_KEY //the token is a variable which holds the token
                     }
                 });
-                const {data: response2} = await axios.get('https://www.alphavantage.co/query?function=DIGITAL_CURRENCY_DAILY&symbol=' + response.symbol + '&market=USD&apikey=Q3YV85Z5UPGZWZ0N');
+                const {data: response2} = await
+                    axios.get('https://www.alphavantage.co/query?function=DIGITAL_CURRENCY_DAILY&symbol='
+                        + response.symbol + '&market=USD&apikey=Q3YV85Z5UPGZWZ0N');
 
                 setData(response);
                 setGraph(response2);
